@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RSS Reader Test Page</h1>
+        <p>This is a simple HTML page for testing the Kotlin Native RSS project.</p>
+    </div>
+
+    <div class="content">
+        <h2>Sample Content</h2>
+        <p>This page demonstrates basic HTML structure and can be used to test:</p>
+        <ul>
+            <li>HTML parsing capabilities</li>
+            <li>Resource loading from the webview component</li>
+            <li>CSS styling support</li>
+            <li>JavaScript integration (if needed)</li>
+        </ul>
+
+        <h3>Features</h3>
+        <p>The RSS reader project includes:</p>
+        <ol>
+            <li>Native Kotlin implementation</li>
+            <li>Cross-platform support</li>
+            <li>WebView integration</li>
+            <li>System tray functionality</li>
+        </ol>
+
+        <div id="dynamic-content">
+            <p>This content can be updated dynamically via JavaScript.</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('Simple page loaded successfully');
+
+        // Simple test function
+        function updateContent() {
+            document.getElementById('dynamic-content').innerHTML =
+                '<p style="color: green;">Content updated at: ' + new Date().toLocaleTimeString() + '</p>';
+        }
+
+        // Auto-update every 5 seconds for demo
+        setInterval(updateContent, 5000);
+    </script>
+</body>
+</html>
