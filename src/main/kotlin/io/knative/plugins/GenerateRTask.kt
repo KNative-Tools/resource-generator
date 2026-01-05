@@ -1,7 +1,9 @@
-package io.rss.knative.tools.plugins
+package io.knative.plugins
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.provider.Property
+import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
@@ -9,7 +11,7 @@ import java.util.*
 
 abstract class GenerateRTask : DefaultTask() {
 
-    private val acceptedExtensions = setOf("txt", "md", "js", "html", "css")
+    private val acceptedExtensions = setOf("txt", "md", "js", "html", "css", "sql")
 
     @get:InputDirectory
     abstract val resourcesDir: DirectoryProperty
@@ -17,16 +19,22 @@ abstract class GenerateRTask : DefaultTask() {
     @get:OutputDirectory
     abstract val outputDir: DirectoryProperty
 
+    @get:Input
+    abstract val packageName: Property<String>
+
+    @get:Input
+    abstract val resultObjectName: Property<String>
+
     @TaskAction
     fun generate() {
         val outputDirFile = outputDir.get().asFile
         outputDirFile.mkdirs()
 
         val sb = StringBuilder()
-        sb.appendLine("package io.rss.knative.tools.webview.resources")
+        sb.appendLine("package ${packageName.get()}")
         sb.appendLine()
         sb.appendLine("/** Auto-generated. Do not modify. */")
-        sb.appendLine("object R {")
+        sb.appendLine("object ${resultObjectName.get()} {")
 
         resourcesDir.get().asFile.walkTopDown()
             .filter { it.isFile }
@@ -40,12 +48,12 @@ abstract class GenerateRTask : DefaultTask() {
 
                 val fileContent = file.readLines().joinToString(System.lineSeparator())
 
-                sb.appendLine("    const val $constName: String = \"\"\"\n $fileContent \n\"\"\" ")
+                sb.appendLine("    val $constName: String = \$\$\"\"\"$fileContent\"\"\"")
             }
 
         sb.appendLine("}")
 
-        val outputFile = outputDirFile.resolve("R.kt")
+        val outputFile = outputDirFile.resolve("${resultObjectName.get()}.kt")
         outputFile.writeText(sb.toString())
     }
 }

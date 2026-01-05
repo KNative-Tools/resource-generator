@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
 }
 
-group = "io.rss.knative.tools.plugins"
+group = "io.knative.plugins"
 version = "1.0.0"
 
 java {
@@ -17,18 +17,11 @@ java {
 
 gradlePlugin {
     plugins {
-//        create<PluginDeclaration<*>>("resourceGenerator") {
-//            id = "io.rss.knative.tools.resource-generator"
-//            implementationClass = "io.rss.knative.tools.plugins.ResourceGeneratorPlugin"
-//            displayName = "K/N Resource Generator Plugin"
-//            description = "Generates a Kotlin R file from resource files in order to embed them into the native application"
-//        }
-
         register("resourceGenerator") {
-            id = "io.rss.knative.tools.resource-generator"
-            implementationClass = "io.rss.knative.tools.plugins.ResourceGeneratorPlugin"
+            id = "io.knative.plugins.resource-generator"
+            implementationClass = "io.knative.plugins.ResourceGeneratorPlugin"
             displayName = "K/N Resource Generator Plugin"
-            description = "Generates a Kotlin R file from resource files in order to embed them into the native application"
+            description = "Generates Kotlin files from resource files in order to embed them into the native application"
         }
     }
 }
