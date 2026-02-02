@@ -1,4 +1,5 @@
 site_name: Resource Generator Plugin
+docs_dir: doc
 
 theme:
   name: material
