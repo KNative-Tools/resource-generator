@@ -1,6 +1,6 @@
 # Resource Generator Plugin Usage
 
-This project uses the `io.rss.knative.tools.resource-generator` plugin to embed resources (text and binary files) directly into the Kotlin code as generated objects. This is particularly useful for Kotlin Native or multiplatform projects where accessing filesystem resources at runtime might be complex or when you want to bundle assets into the executable.
+This project uses the `io.knative.plugins.resource-generator` plugin to embed resources (text and binary files) directly into the Kotlin code as generated objects. This is particularly useful for Kotlin Native or multiplatform projects where accessing filesystem resources at runtime might be complex or when you want to bundle assets into the executable.
 
 ## 1. Gradle Configuration
 
@@ -12,7 +12,7 @@ In the `core` module, both text resources and binary assets are configured.
 
 ```kotlin
 plugins {
-    id("io.rss.knative.tools.resource-generator") version "1.0.0"
+    id("io.knative.plugins.resource-generator") version "1.0.0"
 }
 
 resourceGenerator {
@@ -110,7 +110,7 @@ You can access these resources directly in your code.
 
 ### Using Text Resources
 
-Used in `core/src/appleMain/kotlin/com/example/petshop/standalone/StandaloneTxStreamPetApp.kt`:
+Used in `core/src/appleMain/kotlin/com/example/petshop/standalone/StandalonePetApp.kt`:
 
 ```kotlin
 import com.example.petshop.gen.R
@@ -149,6 +149,6 @@ import com.example.petshop.gen.BinAssets
 
 // ...
 val sqlList = cleanUpSqlSource(R.DB_SCHEMA_SQL)
-    .plus(cleanUpSqlSource(BinAssets.VULNERABILITIES_MIN_LOAD_SQL.decodeToString()))
+    .plus(cleanUpSqlSource(BinAssets.ANIMALS_LOAD_SQL.decodeToString()))
 // ...
 ```

@@ -1,0 +1,8 @@
+site_name: Resource Generator Plugin
+
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - Examples: examples.md
