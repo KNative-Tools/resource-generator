@@ -1,7 +1,7 @@
 # Implementation Complete ✅
 
 ## Summary
-Successfully refactored the Knative Resource Generator Plugin to create a **single task** (`generateBytesAssets`) that processes all binary assets configurations, instead of creating multiple tasks.
+Successfully refactored the K MultPlat. Resource Generator Plugin to create a **single task** (`generateBytesAssets`) that processes all binary assets configurations, instead of creating multiple tasks.
 
 ## What Changed
 

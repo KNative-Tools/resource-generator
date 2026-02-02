@@ -19,7 +19,7 @@ resources/
 ### 1. Assets.kt (Main Interface File)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 import kotlin.io.encoding.Base64
 import kotlin.io.encoding.ExperimentalEncodingApi
@@ -49,7 +49,7 @@ fun AssetsItem.getDecoded(fileName: String): ByteArray? {
 ### 2. AssetsRoot.kt (Root Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 /** Root object for accessing all assets */
@@ -76,7 +76,7 @@ object AssetsRoot : AssetsItem {
 ### 3. IndexHtml.kt (File Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 object IndexHtml : AssetsItem {
@@ -97,7 +97,7 @@ object IndexHtml : AssetsItem {
 ### 4. StyleCss.kt (File Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 object StyleCss : AssetsItem {
@@ -118,7 +118,7 @@ object StyleCss : AssetsItem {
 ### 5. Images.kt (Directory Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 /** Directory: images */
@@ -143,7 +143,7 @@ object Images : AssetsItem {
 ### 6. ImagesLogoPng.kt (Nested File Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 object ImagesLogoPng : AssetsItem {
@@ -164,7 +164,7 @@ object ImagesLogoPng : AssetsItem {
 ### 7. ImagesIcons.kt (Nested Directory Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 /** Directory: images/icons */
@@ -187,7 +187,7 @@ object ImagesIcons : AssetsItem {
 ### 8. ImagesIconsCloseSvg.kt (Deeply Nested File Object)
 
 ```kotlin
-package io.knative.webview.resources
+package io.github.kmupla.webview.resources
 
 /** Auto-generated. Do not modify. */
 object ImagesIconsCloseSvg : AssetsItem {

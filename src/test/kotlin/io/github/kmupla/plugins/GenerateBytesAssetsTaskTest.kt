@@ -1,4 +1,4 @@
-package io.knative.plugins
+package io.github.kmupla.plugins
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.jupiter.api.BeforeEach

@@ -1,4 +1,4 @@
-package io.knative.plugins
+package io.github.kmupla.plugins
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.provider.ListProperty
